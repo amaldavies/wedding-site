@@ -787,7 +787,6 @@ h3 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  background: #C78665;
   padding: 126px 55px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -944,7 +943,6 @@ h3 {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  border: 1px solid #C78665;
   top: -30px;
   left: -20px;
   z-index: -3;
@@ -983,7 +981,6 @@ h3 {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  border: 1px solid #F2C64D;
   top: -30px;
   left: -40px;
   z-index: -3;
