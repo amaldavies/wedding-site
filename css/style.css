@@ -15,8 +15,11 @@ body {
   font-style: normal;
   overflow-x: hidden;
 }
+html {
+  scroll-behavior: smooth;
+}
 
-/* line 15, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/theme-default.scss */
+
 .img {
   max-width: 100%;
   -webkit-transition: 0.3s;
@@ -25,7 +28,6 @@ body {
   transition: 0.3s;
 }
 
-/* line 19, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/theme-default.scss */
 a,
 .button {
   -webkit-transition: 0.3s;
@@ -34,7 +36,7 @@ a,
   transition: 0.3s;
 }
 
-/* line 23, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/theme-default.scss */
+
 a:focus,
 .button:focus,
 button:focus {

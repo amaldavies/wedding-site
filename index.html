@@ -39,8 +39,8 @@
                     <h3>Binshad & Dhaniya <br>
                         <p class="text-white date-banner">14 September 2024</p>
                         <span class="wedding-ceremony">
-                        Wedding Ceremony
-                    </span>
+                            Wedding Ceremony
+                        </span>
                     </h3>
                 </div>
             </div>
@@ -155,7 +155,7 @@
     </div>
 
 
-    <div class="gallery_area">
+    <div class="gallery_area" id="gallery_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -299,22 +299,23 @@
                                     <div class="popup_inner">
                                         <div class="form_heading text-center">
                                             <h3>Are You Attending?</h3>
-                                            <p>Kindly respond before 30 August</p>
+                                            <p>Kindly respond before 14 September</p>
                                         </div>
-                                        <form action="#">
+                                        <form action="#" id="form-wedding">
                                             <div class="row">
                                                 <div class="col-xl-12">
-                                                    <input type="text" placeholder="Your Name">
+                                                    <input type="text" placeholder="Your Name" name="name">
                                                 </div>
                                                 <div class="col-xl-12">
-                                                    <input type="text" placeholder="Email">
+                                                    <input type="email" name="email" placeholder="Email">
                                                 </div>
                                                 <div class="col-xl-12">
-                                                    <select class="form-select wide" id="default-select" class>
-                                                        <option data-display="1 Guest">1 Guest</option>
-                                                        <option value="1">2 Guest</option>
-                                                        <option value="2">3 Guest</option>
-                                                        <option value="3">4 Guest</option>
+                                                    <select class="form-select wide" id="default-select" name="guest">
+                                                        <option value="" selected>Choose Guest</option>
+                                                        <option value="1">1 Guest</option>
+                                                        <option value="2">2 Guest</option>
+                                                        <option value="3">3 Guest</option>
+                                                        <option value="4">4 Guest</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-xl-12">
@@ -625,7 +626,8 @@
                                             draggable="false"
                                             style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;">
                                     </div>
-                                </a></div>
+                                </a>
+                            </div>
                             <div
                                 style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 300px; height: 180px; position: absolute; left: 315px; top: 150px;">
                                 <div style="padding: 0px 0px 10px; font-size: 16px; box-sizing: border-box;">Map Data
@@ -649,7 +651,8 @@
                                     <div
                                         style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;">
                                         <a style="text-decoration: none; cursor: pointer; display: none;">Map
-                                            Data</a><span>Map data ©2019 Google</span></div>
+                                            Data</a><span>Map data ©2019 Google</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;">
@@ -670,7 +673,8 @@
                                     <a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank"
                                         rel="noopener"
                                         style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of
-                                        Use</a></div>
+                                        Use</a>
+                                </div>
                             </div><button draggable="false" title="Toggle fullscreen view"
                                 aria-label="Toggle fullscreen view" type="button"
                                 class="gm-control-active gm-fullscreen-control"
@@ -695,7 +699,8 @@
                                         title="Report errors in the road map or imagery to Google"
                                         href="https://www.google.com/maps/@-31.197,150.744,9z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3"
                                         style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Report
-                                        a map error</a></div>
+                                        a map error</a>
+                                </div>
                             </div>
                             <div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" draggable="false"
                                 controlwidth="40" controlheight="81"
@@ -786,7 +791,7 @@
                             <ul>
                                 <li><a href="#">Home</a></li>
                                 <li><a href="#">Our Story</a></li>
-                                <li><a href="#">Gallery</a></li>
+                                <li><a href="#gallery_area">Gallery</a></li>
                                 <li><a href="#">Accommodation</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
@@ -849,6 +854,18 @@
         });
     </script>
     <script>
+        $('#form-wedding').validate({
+            errorClass:'text-danger error-class',
+            errorElement: "span",
+            rules: {
+                name: {
+                    required: true
+                },
+                email: {
+                    required: true
+                },
+            }
+        })
         function initMap() {
             var uluru = {
                 lat: -25.363,
@@ -903,3 +920,10 @@
 
 
 </html>
+<style>
+    .error-class{
+        font-size: 13px;
+        /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+        margin-bottom: 5px!important;
+    }
+</style>
