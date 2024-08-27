@@ -141,7 +141,7 @@
 
 
 
-    <div class="program_details_area">
+    <div class="program_details_area" style="padding-top: 43px;">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -370,7 +370,9 @@
             </div>
         </div>
     </footer>
-
+    <a href="https://maps.app.goo.gl/MHjc7ousbEiuvP3R7" target="_blank">
+        <span id="backToTopBtn" title="Go to top"><img src="img/map.png" height="35" width="35"></span>
+    </a>
 
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
@@ -483,6 +485,21 @@
                     console.log('FAILED...', error);
                 });
         });
+
+
+        let backToTopBtn = document.getElementById("backToTopBtn");
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
 
 
 
@@ -600,5 +617,38 @@
         100% {
             stroke-dashoffset: 3100
         }
+    }
+
+    #backToTopBtn {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Fixed position at the bottom-right */
+        bottom: 20px;
+        /* Distance from the bottom */
+        right: 20px;
+        /* Distance from the right */
+        z-index: 99;
+        /* Make sure it does not overlap */
+        background-color: #f8bd9e63;
+        /* Dark grey background */
+        color: white;
+        /* White text color */
+        border: none;
+        /* Remove borders */
+        padding: 10px 15px;
+        /* Some padding */
+        border-radius: 5px;
+        /* Rounded corners */
+        cursor: pointer;
+        /* Pointer cursor on hover */
+        font-size: 18px;
+        /* Increase font size */
+    }
+
+    /* Hover effect */
+    #backToTopBtn:hover {
+        background-color: #f8bd9e63;
+        /* Darker grey background on hover */
     }
 </style>
